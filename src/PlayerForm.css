@@ -1,0 +1,5 @@
+.Playerform {
+  display: grid;
+  gap: 5px;
+  background: steelblue;
+}

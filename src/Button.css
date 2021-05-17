@@ -1,0 +1,15 @@
+.Button {
+  padding: 10px;
+  border: none;
+  background: black;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+
+.Button.active {
+  padding: 10px;
+  border: none;
+  background: steelblue;
+  color: whitesmoke;
+  border-radius: 5px;
+}
