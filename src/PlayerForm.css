@@ -2,4 +2,6 @@
   display: grid;
   gap: 5px;
   background: steelblue;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
 }
