@@ -2,12 +2,10 @@ import Button from './Button'
 import Player from './Player'
 import PlayerForm from './PlayerForm'
 import { useState } from 'react'
+import './App.css'
 
 export default function App() {
-  const [players, setPlayers] = useState([
-    { name: 'Pascal', score: 20 },
-    { name: 'Till', score: 120 },
-  ])
+  const [players, setPlayers] = useState([{ name: 'Pascal', score: 20 }])
 
   return (
     <div className="App">
@@ -20,7 +18,7 @@ export default function App() {
           score={player.score}
         />
       ))}
-      <div>
+      <div className="Buttons">
         <Button onClick={resetScores}>Reset Score</Button>
         <Button onClick={resetAll}>Reset All</Button>
       </div>
