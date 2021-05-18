@@ -2,13 +2,14 @@ import Button from './components/Button'
 import Player from './components/Player'
 import PlayerForm from './components/PlayerForm'
 import { useState } from 'react'
+import background from './components/basketballneu.jpg'
 import './App.css'
 
 export default function App() {
   const [players, setPlayers] = useState([{ name: 'Pascal', score: 20 }])
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${background})` }}>
       {players.map((player, index) => (
         <Player
           onMinus={() => countMinus(index)}
