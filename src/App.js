@@ -20,9 +20,10 @@ export default function App() {
           score={player.score}
         />
       ))}
-
-      <Button onClick={resetScores}>Reset Score</Button>
-      <Button onClick={resetAll}>Reset All</Button>
+      <div>
+        <Button onClick={resetScores}>Reset Score</Button>
+        <Button onClick={resetAll}>Reset All</Button>
+      </div>
       <PlayerForm onSubmit={createPlayer} />
     </div>
   )

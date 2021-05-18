@@ -17,7 +17,7 @@ export default function Score({ name, score, onMinus, onPlus }) {
         <button className="Button__minus" onClick={onMinus}>
           -
         </button>{' '}
-        {score}
+        <output className="Player__score">{score}</output>
         <button className="Button__plus" onClick={onPlus}>
           +
         </button>
