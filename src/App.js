@@ -1,29 +1,33 @@
+import Header from './components/Header'
 import Button from './components/Button'
 import Player from './components/Player'
 import PlayerForm from './components/PlayerForm'
 import { useState } from 'react'
-import background from './components/basketballneu.jpg'
+import background from './components/basketball.jpg'
 import './App.css'
 
 export default function App() {
   const [players, setPlayers] = useState([{ name: 'Pascal', score: 20 }])
 
   return (
-    <div className="App" style={{ backgroundImage: `url(${background})` }}>
-      {players.map((player, index) => (
-        <Player
-          onMinus={() => countMinus(index)}
-          onPlus={() => countPlus(index)}
-          key={player.name}
-          name={player.name}
-          score={player.score}
-        />
-      ))}
-      <div className="Buttons">
-        <Button onClick={resetScores}>Reset Score</Button>
-        <Button onClick={resetAll}>Reset All</Button>
+    <div>
+      <Header />
+      <div className="App" style={{ backgroundImage: `url(${background})` }}>
+        {players.map((player, index) => (
+          <Player
+            onMinus={() => countMinus(index)}
+            onPlus={() => countPlus(index)}
+            key={player.name}
+            name={player.name}
+            score={player.score}
+          />
+        ))}
+        <div className="Buttons">
+          <Button onClick={resetScores}>Reset Score</Button>
+          <Button onClick={resetAll}>Reset All</Button>
+        </div>
+        <PlayerForm onSubmit={createPlayer} />
       </div>
-      <PlayerForm onSubmit={createPlayer} />
     </div>
   )
 
