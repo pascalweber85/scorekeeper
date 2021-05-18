@@ -1,0 +1,10 @@
+.Player {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+
+.Player__button {
+  width: 30px;
+  height: 30px;
+}

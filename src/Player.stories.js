@@ -1,12 +1,12 @@
 import React from 'react'
-import Score from './Score'
+import Player from './Player'
 
 export default {
-  title: 'Score',
-  component: Score,
+  title: 'Player',
+  component: Player,
 }
 
-const Template = args => <Score {...args} />
+const Template = args => <Player {...args} />
 
 export const DefaultScoreboard = Template.bind({})
 DefaultScoreboard.args = {

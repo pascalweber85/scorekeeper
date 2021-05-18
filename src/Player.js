@@ -1,5 +1,5 @@
 import React from 'react'
-import './Score.css'
+import './Player.css'
 import PropTypes from 'prop-types'
 
 Score.propTypes = {
@@ -16,7 +16,7 @@ export default function Score({ name, score, onMinus, onPlus }) {
       <div className="Player__container">
         <button className="Player__button" onClick={onMinus}>
           -
-        </button>
+        </button>{' '}
         {score}
         <button className="Player__button" onClick={onPlus}>
           +
