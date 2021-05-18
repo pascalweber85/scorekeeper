@@ -1,0 +1,40 @@
+.Player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.Button__minus {
+  margin-right: 15px;
+  margin-left: 5px;
+  background: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.Button__plus {
+  margin-right: 5px;
+  margin-left: 15px;
+  background: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.Button__plus:hover {
+  background: green;
+}
+
+.Button__minus :hover {
+  background: red;
+}
+
+.Player__score {
+  width: 3ch;
+  text-align: right;
+  background: greenyellow;
+}
