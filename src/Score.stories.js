@@ -10,12 +10,12 @@ const Template = args => <Score {...args} />
 
 export const DefaultScoreboard = Template.bind({})
 DefaultScoreboard.args = {
-  name: 'default',
-  score: 10,
+  name: 'Till',
+  score: 20,
 }
 
 export const OtherScoreboard = Template.bind({})
 OtherScoreboard.args = {
-  name: 'Passi',
-  score: 20,
+  name: 'Pascal',
+  score: 0,
 }

@@ -11,14 +11,14 @@ Score.propTypes = {
 
 export default function Score({ name, score, onMinus, onPlus }) {
   return (
-    <section className="Score">
+    <section className="Player">
       {name}
-      <div className="Score__container">
-        <button className="Score__button" onClick={onMinus}>
+      <div className="Player__container">
+        <button className="Player__button" onClick={onMinus}>
           -
         </button>
         {score}
-        <button className="Score__button" onClick={onPlus}>
+        <button className="Player__button" onClick={onPlus}>
           +
         </button>
       </div>
