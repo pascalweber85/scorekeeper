@@ -1,0 +1,14 @@
+.Header {
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgb(238, 171, 48),
+    orange,
+    rgba(255, 81, 0, 0.719),
+    orange,
+    rgb(241, 165, 23)
+  );
+  padding: 10px;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
