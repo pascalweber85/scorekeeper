@@ -7,7 +7,9 @@ import background from './components/basketball.jpg'
 import './App.css'
 
 export default function App() {
-  const [players, setPlayers] = useState([{ name: 'Pascal', score: 20 }])
+  const [players, setPlayers] = useState([
+    /*{ name: 'Pascal', score: 20 }*/
+  ])
 
   return (
     <div>
