@@ -4,10 +4,26 @@
   gap: 50px;
 }
 
-.Player__button {
+.Button__minus {
   background: black;
   color: white;
   width: 30px;
   height: 30px;
   border-radius: 5px;
+}
+
+.Button__plus {
+  background: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.Button__plus:hover {
+  background: green;
+}
+
+.Button__minus :hover {
+  background: red;
 }
