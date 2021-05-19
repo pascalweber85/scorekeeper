@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Button from './components/Button'
 import PlayerWrapper from './components/Player'
 import PlayerForm from './components/PlayerForm'
+import NavigationWrapper from './components/Navigation'
 import { useState } from 'react'
 import background from './components/basketball.jpg'
 import './App.css'
@@ -30,6 +31,7 @@ export default function App() {
         </div>
         <PlayerForm onSubmit={createPlayer} />
       </div>
+      <NavigationWrapper />
     </div>
   )
 
