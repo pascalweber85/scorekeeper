@@ -12,6 +12,7 @@ export const defaultButton = Template.bind({})
 defaultButton.args = {
   children: 'Hello',
   isActive: false,
+  
 }
 
 export const activeButton = Template.bind({})

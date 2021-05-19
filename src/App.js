@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Button from './components/Button'
-import Player from './components/Player'
+import PlayerWrapper from './components/Player'
 import PlayerForm from './components/PlayerForm'
 import { useState } from 'react'
 import background from './components/basketball.jpg'
@@ -16,7 +16,7 @@ export default function App() {
       <Header />
       <div className="App" style={{ backgroundImage: `url(${background})` }}>
         {players.map((player, index) => (
-          <Player
+          <PlayerWrapper
             onMinus={() => countMinus(index)}
             onPlus={() => countPlus(index)}
             key={player.name}
