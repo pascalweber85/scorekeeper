@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Button from '../components/Button'
 import LabeledInput from '../components/LabeledInput'
+import background from '../components/basketball.jpg'
 
 CreatePage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
@@ -10,7 +11,10 @@ CreatePage.propTypes = {
 export default function CreatePage({ onSubmit }) {
   return (
     <Grid>
-      <Form onSubmit={handleSubmit}>
+      <Form
+        style={{ backgroundImage: `url(${background})` }}
+        onSubmit={handleSubmit}
+      >
         <LabeledInput
           label="Name of game:"
           name="name"
@@ -21,7 +25,8 @@ export default function CreatePage({ onSubmit }) {
           name="players"
           placeholder="e.g. Jane, John"
         />
-        <Button>Create game</Button>
+
+        <Button>Create Game</Button>
       </Form>
     </Grid>
   )
@@ -54,10 +59,11 @@ const Grid = styled.section`
 
 const Form = styled.form`
   display: grid;
-  gap: 12px;
+  gap: 50px;
   label {
     display: grid;
     gap: 4px;
+    padding: 10px;
   }
   input {
     padding: 4px;

@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 import Navigation from './components/Navigation'
 // import PlayerWrapper from './components/Player'
 // import PlayerForm from './components/PlayerForm'
-import background from './components/basketball.jpg'
+// import background from './components/basketball.jpg'
 import CreatePage from './pages/CreatePage'
 import GamePage from './pages/GamePage'
 import HistoryPage from './pages/HistoryPage'
@@ -44,7 +44,6 @@ export default function App() {
           ]}
         />
       )}
-      <div style={{ backgroundImage: `url(${background})` }}></div>
     </AppGrid>
   )
 
