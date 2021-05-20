@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Heading from './components/Header'
 import Button from './components/Button'
 import PlayerWrapper from './components/Player'
 import PlayerForm from './components/PlayerForm'
@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <div>
-      <Header />
+      <Heading> TwentyOne - Basketball </Heading>
       <div className="App" style={{ backgroundImage: `url(${background})` }}>
         {players.map((player, index) => (
           <PlayerWrapper
@@ -26,12 +26,13 @@ export default function App() {
           />
         ))}
         <div className="Buttons">
-          <Button onClick={resetScores}>Reset Score</Button>
+          <Button color="white" isActive onClick={resetScores}>
+            Reset Score
+          </Button>
           <Button onClick={resetAll}>Reset All</Button>
         </div>
         <PlayerForm onSubmit={createPlayer} />
       </div>
-      <NavigationWrapper />
     </div>
   )
 

@@ -1,11 +1,21 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
-const ButtonStyled = styled.Styled`
+Button.propTypes = {
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+}
+
+export default function Button(props) {
+  return <ButtonStyled {...props} />
+}
+
+const ButtonStyled = styled.button`
   padding: 10px;
   border: none;
   background: ${props => (props.isActive ? 'green' : 'steelblue')};
-  color: whitesmoke;
+  color: ${props => props.color};
   border-radius: 5px;
   margin: 10px;
 
@@ -13,14 +23,3 @@ const ButtonStyled = styled.Styled`
     background: orange;
   }
 `
-
-Button.propTypes = {
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func,
-  children: PropTypes.node,
-}
-
-function Button(props) {
-  return <ButtonStyled {...props} />
-}
-export default Button
