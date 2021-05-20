@@ -19,66 +19,55 @@ export default function App() {
 
   return (
     <AppGrid>
-      <div>
-        <Heading> TwentyOne - Basketball </Heading>
-        <div className="App" style={{ backgroundImage: `url(${background})` }}>
-          {players.map((player, index) => (
-            <PlayerWrapper
-              onMinus={() => countMinus(index)}
-              onPlus={() => countPlus(index)}
-              key={player.name}
-              name={player.name}
-              score={player.score}
-            />
-          ))}
-          <div className="Buttons">
-            <Button color="white" isActive onClick={resetScores}>
-              Reset Score
-            </Button>
-            <Button onClick={resetAll}>Reset All</Button>
-          </div>
-          <PlayerForm onSubmit={createPlayer} />
-        </div>
-      </div>
-      <Navigation
-        currentPageId={currentPageId}
-        onNavigate={setCurrentPageId}
-        pages={[
-          { title: 'Create', id: 'create' },
-          { title: 'History', id: 'history' },
-        ]}
-      />
+      {currentPageId === 'create' && (
+        <CreatePage onNavigate={setCurrentPageId} onSubmit={handleSubmit} />
+      )}
+      {currentPageId === 'game' && (
+        <GamePage
+          onResetScores={resetScores}
+          onEndGame={handleEndGame}
+          onPlayerUpdate={updateScore}
+          nameOfGame={nameOfGame}
+          players={players}
+        />
+      )}
+      {currentPageId === 'history' && (
+        <HistoryPage games={history} onNavigate={setCurrentPageId} />
+      )}
+      {currentPageId !== 'game' && (
+        <Navigation
+          currentPageId={currentPageId}
+          onNavigate={setCurrentPageId}
+          pages={[
+            { title: 'Create', id: 'create' },
+            { title: 'History', id: 'history' },
+          ]}
+        />
+      )}
     </AppGrid>
   )
 
-  function createPlayer(name) {
-    setPlayers([...players, { name, score: 0 }])
+  function handleEndGame() {
+    setCurrentPageId('history')
+    setHistory([{ players, nameOfGame }, ...history])
+  }
+
+  function handleSubmit({ players, nameOfGame }) {
+    setPlayers(players)
+    setNameOfGame(nameOfGame)
+    setCurrentPageId('game')
   }
 
   function resetScores() {
     setPlayers(players.map(player => ({ ...player, score: 0 })))
   }
 
-  function resetAll() {
-    setPlayers([])
-  }
-
-  function countMinus(index) {
+  function updateScore(index, value) {
     const playerToUpdate = players[index]
 
     setPlayers([
       ...players.slice(0, index),
-      { ...playerToUpdate, score: playerToUpdate.score - 1 },
-      ...players.slice(index + 1),
-    ])
-  }
-
-  function countPlus(index) {
-    const playerToUpdate = players[index]
-
-    setPlayers([
-      ...players.slice(0, index),
-      { ...playerToUpdate, score: playerToUpdate.score + 1 },
+      { ...playerToUpdate, score: playerToUpdate.score + value },
       ...players.slice(index + 1),
     ])
   }
