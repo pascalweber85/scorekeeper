@@ -2,7 +2,7 @@ import './PlayerForm.css'
 import PropTypes from 'prop-types'
 
 PlayerForm.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default function PlayerForm({ onSubmit }) {
@@ -20,5 +20,6 @@ export default function PlayerForm({ onSubmit }) {
     const input = form.elements.name
     onSubmit(input.value)
     form.reset()
+    input.focus()
   }
 }

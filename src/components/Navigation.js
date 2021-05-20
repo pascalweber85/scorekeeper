@@ -1,19 +1,27 @@
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Button from './Button'
 
 Navigation.propTypes = {
-  onClickA: PropTypes.func,
-  onClickB: PropTypes.func,
-  nameA: PropTypes.string,
-  nameB: PropTypes.string,
+  onNavigate: PropTypes.finc.isRequired,
+  pages: PropTypes.arrayOf(
+    PropTypes.shape({ title: PropTypes.string, id: PropTypes.string })
+  ),
+  currentPAgeId: PropTypes.string,
 }
 
-export default function Navigation({ nameA, nameB, onClickA, onClickB }) {
+export default function Navigation({ onNavigate, pages, currentPageId }) {
   return (
     <Nav>
-      <Button onClick={onClickA}>{nameA}</Button>
-      <Button onClick={onClickB}>{nameB}</Button>
+      {pages.map(({ title, id }) => (
+        <NavButton
+          key={id}
+          isActive={currentPageId === id}
+          onClick={() => onNavigate(id)}
+        >
+          {title}
+        </NavButton>
+      ))}
     </Nav>
   )
 }

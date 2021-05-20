@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 Button.propTypes = {
   isActive: PropTypes.bool,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   children: PropTypes.node,
 }
 

@@ -9,7 +9,22 @@ export default {
 const Template = args => <Navigation {...args} />
 
 export const DefaultNavigation = Template.bind({})
+
 DefaultNavigation.args = {
-  nameA: 'Player',
-  nameB: 'History',
+  currentPageId: 'play',
+  pages: [
+    { title: 'Play', id: 'play' },
+    { title: 'History', id: 'history' },
+  ],
+}
+
+export const TreeButtons = Template.bind({})
+
+TreeButtons.arg = {
+  currentPageId: 'one',
+  page: [
+    { title: 'Eins', id: 'one' },
+    { title: 'Zwei', id: 'two' },
+    { title: 'Drei', id: 'tree' },
+  ],
 }
