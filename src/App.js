@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
-import Heading from './components/Header'
-import Button from './components/Button'
+// import Heading from './components/Header'
+// import Button from './components/Button'
 import Navigation from './components/Navigation'
-import PlayerWrapper from './components/Player'
-import PlayerForm from './components/PlayerForm'
+// import PlayerWrapper from './components/Player'
+// import PlayerForm from './components/PlayerForm'
 import background from './components/basketball.jpg'
 import CreatePage from './pages/CreatePage'
 import GamePage from './pages/GamePage'
@@ -44,6 +44,7 @@ export default function App() {
           ]}
         />
       )}
+      <div style={{ backgroundImage: `url(${background})` }}></div>
     </AppGrid>
   )
 
