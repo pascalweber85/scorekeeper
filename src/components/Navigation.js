@@ -1,34 +1,32 @@
-// import PropTypes from 'prop-types'
-// import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import Button from './Button'
 
-// Navigation.propTypes = {
-//   isActive: PropTypes.bool,
-//   onClick: PropTypes.func,
-//   children: PropTypes.node,
-// }
+Navigation.propTypes = {
+  onClickA: PropTypes.func,
+  onClickB: PropTypes.func,
+  nameA: PropTypes.string,
+  nameB: PropTypes.string,
+}
 
-// export default function Navigation() {
-//   return (
-//     <NavigationWrapper>
-//       <button>Play</button>
-//       <button>History</button>
-//     </NavigationWrapper>
-//   )
-// }
+export default function Navigation({ nameA, nameB, onClickA, onClickB }) {
+  return (
+    <Nav>
+      <Button onClick={onClickA}>{nameA}</Button>
+      <Button onClick={onClickB}>{nameB}</Button>
+    </Nav>
+  )
+}
 
-// const NavigationWrapper = styled.navigation`
-//   display: flex;
-//   padding: 5px;
-// `
-// const button = styled.navbutton`
-//   padding: 10px;
-//   border: none;
-//   background: ${props => (props.isActive ? 'green' : 'steelblue')};
-//   color: whitesmoke;
-//   border-radius: 5px;
-//   margin: 10px;
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-evenly;
+  button {
+    width: 50%;
+  
 
-//   &:hover {
-//     background: orange;
-//   }
-// `
+
+  &:hover {
+    background: orange;
+  }
+`

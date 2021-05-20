@@ -6,4 +6,10 @@ export default {
   components: Navigation,
 }
 
-export const defaultNavi = args => <Navigation {...args} />
+const Template = args => <Navigation {...args} />
+
+export const DefaultNavigation = Template.bind({})
+DefaultNavigation.args = {
+  nameA: 'Player',
+  nameB: 'History',
+}

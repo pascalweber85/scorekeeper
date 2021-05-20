@@ -2,10 +2,10 @@ import Heading from './components/Header'
 import Button from './components/Button'
 import PlayerWrapper from './components/Player'
 import PlayerForm from './components/PlayerForm'
-import NavigationWrapper from './components/Navigation'
+import Nav from './components/Navigation'
 import { useState } from 'react'
 import background from './components/basketball.jpg'
-import './App.css'
+import styled from 'styled-components'
 
 export default function App() {
   const [players, setPlayers] = useState([
@@ -13,27 +13,30 @@ export default function App() {
   ])
 
   return (
-    <div>
-      <Heading> TwentyOne - Basketball </Heading>
-      <div className="App" style={{ backgroundImage: `url(${background})` }}>
-        {players.map((player, index) => (
-          <PlayerWrapper
-            onMinus={() => countMinus(index)}
-            onPlus={() => countPlus(index)}
-            key={player.name}
-            name={player.name}
-            score={player.score}
-          />
-        ))}
-        <div className="Buttons">
-          <Button color="white" isActive onClick={resetScores}>
-            Reset Score
-          </Button>
-          <Button onClick={resetAll}>Reset All</Button>
+    <Wrapper>
+      <div>
+        <Heading> TwentyOne - Basketball </Heading>
+        <div className="App" style={{ backgroundImage: `url(${background})` }}>
+          {players.map((player, index) => (
+            <PlayerWrapper
+              onMinus={() => countMinus(index)}
+              onPlus={() => countPlus(index)}
+              key={player.name}
+              name={player.name}
+              score={player.score}
+            />
+          ))}
+          <div className="Buttons">
+            <Button color="white" isActive onClick={resetScores}>
+              Reset Score
+            </Button>
+            <Button onClick={resetAll}>Reset All</Button>
+          </div>
+          <PlayerForm onSubmit={createPlayer} />
+          <Nav />
         </div>
-        <PlayerForm onSubmit={createPlayer} />
       </div>
-    </div>
+    </Wrapper>
   )
 
   function createPlayer(name) {
@@ -68,3 +71,10 @@ export default function App() {
     ])
   }
 }
+
+const Wrapper = styled.section`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+  margin-bottom: 20px;
+`

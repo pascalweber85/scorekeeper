@@ -5,6 +5,8 @@ export default function Header({ children }) {
 }
 
 const Heading = styled.h2`
+  display: flex;
+  justify-content: space-around;
   text-align: center;
   background: linear-gradient(
     90deg,
@@ -14,7 +16,7 @@ const Heading = styled.h2`
     orange,
     rgb(241, 165, 23)
   );
-  padding: 10px;
+  padding: 20px;
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
 `
