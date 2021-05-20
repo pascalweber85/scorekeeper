@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import Button from './Button'
 
 Navigation.propTypes = {
-  onNavigate: PropTypes.finc.isRequired,
+  onNavigate: PropTypes.func.isRequired,
   pages: PropTypes.arrayOf(
     PropTypes.shape({ title: PropTypes.string, id: PropTypes.string })
   ),
@@ -37,4 +37,8 @@ const Nav = styled.nav`
   &:hover {
     background: orange;
   }
+`
+const NavButton = styled(Button)`
+  border-radius: 0;
+  width: 100%;
 `

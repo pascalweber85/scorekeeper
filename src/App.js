@@ -2,7 +2,7 @@ import Heading from './components/Header'
 import Button from './components/Button'
 import PlayerWrapper from './components/Player'
 import PlayerForm from './components/PlayerForm'
-import Nav from './components/Navigation'
+
 import { useState } from 'react'
 import background from './components/basketball.jpg'
 import styled from 'styled-components'
@@ -33,7 +33,6 @@ export default function App() {
             <Button onClick={resetAll}>Reset All</Button>
           </div>
           <PlayerForm onSubmit={createPlayer} />
-          <Nav />
         </div>
       </div>
     </Wrapper>
