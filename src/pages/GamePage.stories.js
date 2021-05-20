@@ -3,10 +3,16 @@ import GamePage from './GamePage'
 
 export default {
   title: 'Pages/GamePage',
-  components: GamePage,
+  component: GamePage,
 }
 
 const Template = args => <GamePage {...args} />
 
-export const DefaultGamePage = Template.bind({})
-DefaultGamePage.args = {}
+export const Default = Template.bind({})
+Default.args = {
+  nameOfGame: 'Carcassonne',
+  players: [
+    { name: 'John', score: 0 },
+    { name: 'Jane', score: 20 },
+  ],
+}

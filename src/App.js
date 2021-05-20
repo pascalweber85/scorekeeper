@@ -1,19 +1,24 @@
+import { useState } from 'react'
+import styled from 'styled-components/macro'
 import Heading from './components/Header'
 import Button from './components/Button'
+import Navigation from './components/Navigation'
 import PlayerWrapper from './components/Player'
 import PlayerForm from './components/PlayerForm'
-
-import { useState } from 'react'
 import background from './components/basketball.jpg'
-import styled from 'styled-components'
+import CreatePage from './pages/CreatePage'
+import GamePage from './pages/GamePage'
+import HistoryPage from './pages/HistoryPage'
 
 export default function App() {
-  const [players, setPlayers] = useState([
-    /*{ name: 'Pascal', score: 20 }*/
-  ])
+  const [currentPageId, setCurrentPageId] = useState('create')
+  const [history, setHistory] = useState([])
+  const [players, setPlayers] = useState([])
+  const [nameOfGame, setNameOfGame] = useState('')
+  /*{ name: 'Pascal', score: 20 }*/
 
   return (
-    <Wrapper>
+    <AppGrid>
       <div>
         <Heading> TwentyOne - Basketball </Heading>
         <div className="App" style={{ backgroundImage: `url(${background})` }}>
@@ -35,7 +40,15 @@ export default function App() {
           <PlayerForm onSubmit={createPlayer} />
         </div>
       </div>
-    </Wrapper>
+      <Navigation
+        currentPageId={currentPageId}
+        onNavigate={setCurrentPageId}
+        pages={[
+          { title: 'Create', id: 'create' },
+          { title: 'History', id: 'history' },
+        ]}
+      />
+    </AppGrid>
   )
 
   function createPlayer(name) {
@@ -71,9 +84,10 @@ export default function App() {
   }
 }
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: space-around;
-  margin-top: 0px;
-  margin-bottom: 20px;
+const AppGrid = styled.section`
+  display: grid;
+  grid-template-rows: auto min-content;
+  height: 100vh;
+  padding: 12px;
+  gap: 20px;
 `

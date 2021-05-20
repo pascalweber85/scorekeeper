@@ -8,9 +8,9 @@ export default {
 
 const Template = args => <Navigation {...args} />
 
-export const DefaultNavigation = Template.bind({})
+export const Default = Template.bind({})
 
-DefaultNavigation.args = {
+Default.args = {
   currentPageId: 'play',
   pages: [
     { title: 'Play', id: 'play' },
