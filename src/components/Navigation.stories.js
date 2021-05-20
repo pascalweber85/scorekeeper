@@ -18,13 +18,13 @@ DefaultNavigation.args = {
   ],
 }
 
-export const TreeButtons = Template.bind({})
+export const ThreeButtons = Template.bind({})
 
-TreeButtons.arg = {
+ThreeButtons.arg = {
   currentPageId: 'one',
   page: [
     { title: 'Eins', id: 'one' },
     { title: 'Zwei', id: 'two' },
-    { title: 'Drei', id: 'tree' },
+    { title: 'Drei', id: 'three' },
   ],
 }
