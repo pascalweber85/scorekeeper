@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Switch, useHistory } from 'react-router-dom'
+import { Route, Switch, useHistory, Redirect } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Navigation from './components/Navigation'
 import CreatePage from './pages/CreatePage'
@@ -18,6 +18,9 @@ export default function App() {
     <AppGrid>
       <Switch>
         <Route exact path="/">
+          <Redirect to="create" />
+        </Route>
+        <Route path="/create">
           <CreatePage onSubmit={handleSubmit} />
         </Route>
         <Route path="/game">
@@ -38,7 +41,7 @@ export default function App() {
           pages={[
             {
               name: 'create',
-              path: '/',
+              path: '/create',
             },
             {
               name: 'history',
