@@ -1,25 +1,23 @@
-import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-import Button from './Button'
+import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 
 Navigation.propTypes = {
-  onNavigate: PropTypes.func.isRequired,
   pages: PropTypes.arrayOf(
-    PropTypes.shape({ title: PropTypes.string, id: PropTypes.string })
+    PropTypes.shape({
+      name: PropTypes.string,
+      path: PropTypes.string,
+      isActive: PropTypes.bool,
+    })
   ),
-  currentPAgeId: PropTypes.string,
 }
 
-export default function Navigation({ onNavigate, pages, currentPageId }) {
+export default function Navigation({ pages }) {
   return (
     <Nav>
-      {pages.map(({ title, id }) => (
-        <NavButton
-          key={id}
-          isActive={currentPageId === id}
-          onClick={() => onNavigate(id)}
-        >
-          {title}
+      {pages.map(({ name, path }) => (
+        <NavButton key={name} to={path} activeStyle={{ background: 'orange' }}>
+          {name}
         </NavButton>
       ))}
     </Nav>
@@ -33,12 +31,22 @@ const Nav = styled.nav`
     width: 50%;
   
 
-
   &:hover {
-    background: orange;
+    background: grey;
   }
 `
-const NavButton = styled(Button)`
-  border-radius: 0;
+const NavButton = styled(NavLink)`
+  border-radius: 15px;
   width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: steelblue;
+
+  &:hover {
+    background: grey;
+  }
 `

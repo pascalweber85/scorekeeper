@@ -12,6 +12,7 @@ export default function CreatePage({ onSubmit }) {
   return (
     <Grid>
       <Form
+        aria-label="Create Game"
         style={{ backgroundImage: `url(${background})` }}
         onSubmit={handleSubmit}
       >
@@ -19,11 +20,15 @@ export default function CreatePage({ onSubmit }) {
           label="Name of game:"
           name="name"
           placeholder="e.g. Carcassonne"
+          type="text"
+          required
         />
         <LabeledInput
           label="Player names:"
           name="players"
           placeholder="e.g. Jane, John"
+          type="text"
+          required
         />
 
         <Button>Create Game</Button>
