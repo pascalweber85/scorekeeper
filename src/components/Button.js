@@ -14,12 +14,12 @@ export default function Button(props) {
 const ButtonStyled = styled.button`
   padding: 10px;
   border: none;
-  background: ${props => (props.isActive ? 'green' : 'steelblue')};
-  color: ${props => props.color};
+  background: ${props => (props.isActive ? 'orange' : 'steelblue')};
+  color: white;
   border-radius: 5px;
   margin: 10px;
 
   &:hover {
-    background: orange;
+    background: grey;
   }
 `

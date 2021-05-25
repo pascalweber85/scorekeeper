@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Button from './Button'
+import { Router, Route, Switch } from 'react-router'
 
 Navigation.propTypes = {
   onNavigate: PropTypes.func.isRequired,
@@ -33,9 +34,8 @@ const Nav = styled.nav`
     width: 50%;
   
 
-
   &:hover {
-    background: orange;
+    background: grey;
   }
 `
 const NavButton = styled(Button)`
